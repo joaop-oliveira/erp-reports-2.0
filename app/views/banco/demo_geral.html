@@ -1,0 +1,196 @@
+<!--<h1> Bancos </h1>-->
+<!--<hr/>-->
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>Codigo Banco</th>-->
+<!--    <th>Banco Fantasia</th>-->
+<!--  </tr>-->
+  <%# @bancos.each do |banco| %>
+<!--    <tr>-->
+<!--      <td><%#= banco.bco_codg %></td>-->
+<!--      <td><%#= banco.bco_fantasia %></td>-->
+<!--    </tr>-->
+  <%# end %>
+<!--</table>-->
+
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <%#= wicked_pdf_stylesheet_link_tag "custom.css" %>
+<!--  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+<!--  <style type="text/css">-->
+<!--    a {text-decoration: none}-->
+<!--  </style>-->
+</head>
+<body text="#000000" link="#000000" alink="#000000" vlink="#000000" >
+<!--<button class="btn btn-danger">Danger!!</button>-->
+<table id="reportERP" width="100%" cellpadding="0" cellspacing="0" border="0" class="table">
+  <tr>
+    <td width="50%">&nbsp;</td>
+    <td align="center">
+      <a name="JR_PAGE_ANCHOR_0_1"></a>
+      <table style="width: 595px; border-collapse: collapse" cellpadding="0" cellspacing="0" border="0" class="table">
+        <tr>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="17"></td>
+          <td colspan="10" style="padding-left: 5px; text-align: right;"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">02/04/2018</span></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"></td>
+          <td colspan="14" valign="middle"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; font-weight: bold;">DEMONSTRATIVO DISPONÍVEL (GERAL)</span></td>
+          <td></td>
+          <td colspan="10" style="padding-left: 5px; text-align: right;"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">13:26:38</span></td>
+          <td colspan="4"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td></td>
+          <td colspan="28" style="background-color: #FFFFFF; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; "></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="4"></td>
+          <td valign="bottom">
+            <span style="font-family: Arial; color: #000000; font-size: 10px; font-weight: bold;">
+              Num. Conta
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td valign="bottom">
+            <span style="font-family: Arial; color: #000000; font-size: 10px; font-weight: bold;">
+              Digito
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td valign="bottom">
+            <span style="font-family: Arial; color: #000000; font-size: 10px; font-weight: bold;">
+              Num Agencia
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td valign="bottom">
+            <span style="font-family: Arial; color: #000000; font-size: 10px; font-weight: bold;">
+              Banco
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td valign="middle">
+            <span style="font-family: Arial; color: #000000; font-size: 10px; font-weight: bold;">
+              Empresa
+            </span>
+          </td>
+          <td colspan="1"></td>
+          <td></td>
+          <td></td>
+          <td valign="bottom">
+            <span style="font-family: Arial; color: #000000; margin-left: 30px; font-size: 10px; font-weight: bold;">
+              Saldo
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <% @demo_geral.each do |item| %>
+            <tr>
+              <td colspan="4"></td>
+                  <td valign="middle">
+                    <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                      <%= item["cta_num"] %>
+                    </span>
+                  </td>
+              <td colspan="2"></td>
+              <td valign="middle">
+                <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                  <%= item["cta_cta_bancaria_dig"] %>
+                </span>
+              </td>
+              <td colspan="2"></td>
+              <td valign="middle">
+                <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                  <%= item["age_num"] %>
+                </span>
+              </td>
+              <td colspan="2"></td>
+              <td valign="middle">
+                <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                  <%= item["banco"] %>
+                </span>
+              </td>
+              <td colspan="2"></td>
+              <td valign="middle">
+                <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                  <%= item["emp_fantasia"] %>
+                </span>
+              </td>
+              <td colspan="1"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td valign="middle">
+                <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px;">
+                  <%= item["saldo"] %>
+                </span>
+              </td>
+            </tr>
+        <% end %>
+        <tr valign="top">
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"></td>
+          <td colspan="25" style="background-color: #FFFFFF; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; "></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="16"></td>
+          <td colspan="2"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; font-weight: bold;">Total:</span></td>
+          <td colspan="2"></td>
+          <td colspan="6" style="text-align: right;"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; font-weight: bold;"><%= @send_total %></span></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"></td>
+          <td colspan="28" style="background-color: #FFFFFF; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; "></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"></td>
+          <td colspan="9" valign="middle" style="padding-right: 3px; "><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 8px;">RJVS000151 - 2.1207.14.0 - Windows 8.1 - Velit Tecnologia</span></td>
+          <td colspan="3"></td>
+          <td colspan="9" style="text-align: right;"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 8px;">Página 1 de </span></td>
+          <td colspan="4" style="text-align: right;"><span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 8px;">1</span></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="31"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+</table>
+</body>

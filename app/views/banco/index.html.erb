@@ -1,0 +1,77 @@
+<html>
+  <title>Demonstrativo Geral</title>
+  <head>
+    <%= wicked_pdf_stylesheet_link_tag "custom.css" %>
+    <style>
+      .center {
+        text-align: center;
+      }
+      .text-small {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+  <h3> Demonstrativo Geral  <span class="text-small" style="margin-left: 300px">
+    <%= Time.now.strftime("%m/%d/%Y") %>
+    <%= Time.now.strftime("%H:%M:%S") %>
+  </span></h3>
+  <br>
+  <table class="table table-sm" border="0">
+    <tfoot>
+    <tr>
+      <th scope="col" colspan="5">
+        <span style="margin-left: 10px; margin-top: 6px">
+           <strong>Total:</strong>
+        </span>
+      </th>
+      <td class="center">
+          <span>
+            <strong>
+              <%= number_to_currency @send_total %>
+            </strong>
+          </span>
+      </td>
+    </tr>
+  </tfoot>
+  <thead >
+    <tr>
+      <th scope="col" class="center" >
+        Conta
+      </th>
+      <th scope="col" class="center" >
+        Dig
+      </th>
+      <th scope="col" class="center" >
+        Agencia
+      </th>
+      <th scope="col" class="center" >
+        Banco
+      </th>
+      <th scope="col" class="center">
+        Empresa
+      </th>
+      <th scope="col" class="center">
+        Saldo
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @demo_geral.each do |item| %>
+      <tr>
+        <td class="center text-small"><%= item["cta_num"] %></td>
+        <td class="center text-small"><%= item["cta_cta_bancaria_dig"] %></td>
+        <td class="center text-small"><%= item["age_num"] %></td>
+        <td class="center text-small"><%= item["banco"] %></td>
+        <td class="center text-small"><%= item["emp_fantasia"] %></td>
+        <td class="center text-small"><%= number_to_currency item["saldo"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <hr>
+  <small>Velit Tecnologia da Informacao - Demonstrativo Geral</small>
+  </body>
+</html>
+
+
